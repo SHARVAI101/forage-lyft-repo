@@ -7,6 +7,6 @@ class SpindlerBattery(Battery):
         self.last_service_date = last_service_date
 
     def needs_service(self):
-        if relativedelta(self.current_date, self.last_service_date).years > 2:
+        if ((self.current_date - self.last_service_date).days / 365.25) > 3:
             return True
         return False

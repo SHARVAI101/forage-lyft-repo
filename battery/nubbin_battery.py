@@ -7,6 +7,6 @@ class NubbinBattery(Battery):
         self.last_service_date = last_service_date
 
     def needs_service(self):
-        if relativedelta(self.current_date, self.last_service_date).years > 4:
+        if ((self.current_date - self.last_service_date).days / 365.25) > 4:
             return True
         return False
