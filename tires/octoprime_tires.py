@@ -5,7 +5,4 @@ class OctoprimeTires(Tires):
         self.wear = wear
 
     def needs_service(self):
-        sum = 0
-        for i in range(len(self.wear)):
-            sum+= self.wear[i]
-        return sum >= 3
+        return sum(self.wear) >= 3
